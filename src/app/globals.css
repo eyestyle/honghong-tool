@@ -1,0 +1,358 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --font-sans:
+    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+  --font-serif:
+    ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+}
+
+/* 默认变量（棕绿色 - 智慧老者），:root 必须在 .theme-* 之前，否则会覆盖主题 */
+:root {
+  --radius: 1.25rem;
+  --background: oklch(0.97 0.01 148);
+  --foreground: oklch(0.18 0.03 148);
+  --card: oklch(0.99 0.008 148 / 0.9);
+  --card-foreground: oklch(0.18 0.03 148);
+  --popover: oklch(0.99 0.008 148 / 0.95);
+  --popover-foreground: oklch(0.18 0.03 148);
+  --primary: oklch(0.50 0.11 150);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.93 0.01 148 / 0.5);
+  --secondary-foreground: oklch(0.22 0.03 148);
+  --muted: oklch(0.94 0.01 148 / 0.4);
+  --muted-foreground: oklch(0.42 0.02 148);
+  --accent: oklch(0.56 0.09 158);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.60 0.18 25);
+  --border: oklch(0.88 0.01 148 / 0.35);
+  --input: oklch(0.90 0.01 148 / 0.2);
+  --ring: oklch(0.50 0.11 150);
+  --chart-1: oklch(0.50 0.11 150);
+  --chart-2: oklch(0.56 0.09 158);
+  --chart-3: oklch(0.62 0.08 140);
+  --chart-4: oklch(0.53 0.10 155);
+  --chart-5: oklch(0.58 0.09 145);
+  --sidebar: oklch(0.95 0.01 148);
+  --sidebar-foreground: oklch(0.22 0.03 148);
+  --sidebar-primary: oklch(0.50 0.11 150);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.93 0.01 148 / 0.5);
+  --sidebar-accent-foreground: oklch(0.22 0.03 148);
+  --sidebar-border: oklch(0.88 0.01 148 / 0.35);
+  --sidebar-ring: oklch(0.50 0.11 150);
+}
+
+/* 智慧老者主题 - 棕绿色（橄榄/禅意绿） */
+.theme-elder {
+  --background: oklch(0.97 0.01 148);
+  --foreground: oklch(0.18 0.03 148);
+  --card: oklch(0.99 0.008 148 / 0.9);
+  --card-foreground: oklch(0.18 0.03 148);
+  --popover: oklch(0.99 0.008 148 / 0.95);
+  --popover-foreground: oklch(0.18 0.03 148);
+  --primary: oklch(0.50 0.11 150);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.93 0.01 148 / 0.5);
+  --secondary-foreground: oklch(0.22 0.03 148);
+  --muted: oklch(0.94 0.01 148 / 0.4);
+  --muted-foreground: oklch(0.42 0.02 148);
+  --accent: oklch(0.56 0.09 158);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.60 0.18 25);
+  --border: oklch(0.88 0.01 148 / 0.35);
+  --input: oklch(0.90 0.01 148 / 0.2);
+  --ring: oklch(0.50 0.11 150);
+  --chart-1: oklch(0.50 0.11 150);
+  --chart-2: oklch(0.56 0.09 158);
+  --chart-3: oklch(0.62 0.08 140);
+  --chart-4: oklch(0.53 0.10 155);
+  --chart-5: oklch(0.58 0.09 145);
+  --sidebar: oklch(0.95 0.01 148);
+  --sidebar-foreground: oklch(0.22 0.03 148);
+  --sidebar-primary: oklch(0.50 0.11 150);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.93 0.01 148 / 0.5);
+  --sidebar-accent-foreground: oklch(0.22 0.03 148);
+  --sidebar-border: oklch(0.88 0.01 148 / 0.35);
+  --sidebar-ring: oklch(0.50 0.11 150);
+}
+
+/* 邻家小姐姐主题 - 粉红色 */
+.theme-sister {
+  --background: oklch(0.97 0.012 355);
+  --foreground: oklch(0.18 0.02 355);
+  --card: oklch(0.99 0.008 355 / 0.9);
+  --card-foreground: oklch(0.18 0.02 355);
+  --popover: oklch(0.99 0.008 355 / 0.95);
+  --popover-foreground: oklch(0.18 0.02 355);
+  --primary: oklch(0.62 0.20 355);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.93 0.012 355 / 0.5);
+  --secondary-foreground: oklch(0.22 0.02 355);
+  --muted: oklch(0.95 0.012 355 / 0.4);
+  --muted-foreground: oklch(0.42 0.02 355);
+  --accent: oklch(0.68 0.16 5);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.60 0.18 25);
+  --border: oklch(0.88 0.012 355 / 0.35);
+  --input: oklch(0.90 0.012 355 / 0.2);
+  --ring: oklch(0.62 0.20 355);
+  --chart-1: oklch(0.62 0.20 355);
+  --chart-2: oklch(0.68 0.16 5);
+  --chart-3: oklch(0.72 0.14 10);
+  --chart-4: oklch(0.65 0.18 0);
+  --chart-5: oklch(0.70 0.15 8);
+  --sidebar: oklch(0.95 0.012 355);
+  --sidebar-foreground: oklch(0.35 0.02 355);
+  --sidebar-primary: oklch(0.62 0.20 355);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.93 0.012 355 / 0.5);
+  --sidebar-accent-foreground: oklch(0.22 0.02 355);
+  --sidebar-border: oklch(0.88 0.012 355 / 0.35);
+  --sidebar-ring: oklch(0.62 0.20 355);
+}
+
+/* 温柔大哥哥主题 - 天蓝色 */
+.theme-brother {
+  --background: oklch(0.97 0.01 230);
+  --foreground: oklch(0.17 0.02 230);
+  --card: oklch(0.99 0.008 230 / 0.9);
+  --card-foreground: oklch(0.17 0.02 230);
+  --popover: oklch(0.99 0.008 230 / 0.95);
+  --popover-foreground: oklch(0.17 0.02 230);
+  --primary: oklch(0.60 0.16 235);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.93 0.01 230 / 0.5);
+  --secondary-foreground: oklch(0.20 0.02 230);
+  --muted: oklch(0.95 0.01 230 / 0.4);
+  --muted-foreground: oklch(0.40 0.02 230);
+  --accent: oklch(0.66 0.13 245);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.60 0.18 25);
+  --border: oklch(0.88 0.01 230 / 0.35);
+  --input: oklch(0.90 0.01 230 / 0.2);
+  --ring: oklch(0.60 0.16 235);
+  --chart-1: oklch(0.60 0.16 235);
+  --chart-2: oklch(0.66 0.13 245);
+  --chart-3: oklch(0.72 0.10 225);
+  --chart-4: oklch(0.63 0.14 240);
+  --chart-5: oklch(0.68 0.12 232);
+  --sidebar: oklch(0.95 0.01 230);
+  --sidebar-foreground: oklch(0.35 0.02 230);
+  --sidebar-primary: oklch(0.60 0.16 235);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.93 0.01 230 / 0.5);
+  --sidebar-accent-foreground: oklch(0.20 0.02 230);
+  --sidebar-border: oklch(0.88 0.01 230 / 0.35);
+  --sidebar-ring: oklch(0.60 0.16 235);
+}
+
+/* 轻拟态效果 */
+.glass {
+  background: var(--card, rgba(255, 255, 255, 0.9));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.2));
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+/* 弥散渐变背景 - 根据主题动态变化 */
+.theme-elder .bg-gradient-3d {
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 40%, oklch(0.50 0.11 150 / 0.14), transparent 60%),
+    radial-gradient(ellipse 50% 60% at 80% 50%, oklch(0.56 0.09 158 / 0.11), transparent 60%),
+    radial-gradient(ellipse 40% 50% at 50% 80%, oklch(0.62 0.08 140 / 0.09), transparent 60%);
+}
+
+.theme-sister .bg-gradient-3d {
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 40%, oklch(0.62 0.20 355 / 0.14), transparent 60%),
+    radial-gradient(ellipse 50% 60% at 80% 50%, oklch(0.68 0.16 5 / 0.11), transparent 60%),
+    radial-gradient(ellipse 40% 50% at 50% 80%, oklch(0.72 0.14 10 / 0.09), transparent 60%);
+}
+
+.theme-brother .bg-gradient-3d {
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 40%, oklch(0.60 0.16 235 / 0.14), transparent 60%),
+    radial-gradient(ellipse 50% 60% at 80% 50%, oklch(0.66 0.13 245 / 0.11), transparent 60%),
+    radial-gradient(ellipse 40% 50% at 50% 80%, oklch(0.72 0.10 225 / 0.09), transparent 60%);
+}
+
+/* 默认弥散渐变（棕绿色） */
+.bg-gradient-3d {
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 40%, oklch(0.50 0.11 150 / 0.14), transparent 60%),
+    radial-gradient(ellipse 50% 60% at 80% 50%, oklch(0.56 0.09 158 / 0.11), transparent 60%),
+    radial-gradient(ellipse 40% 50% at 50% 80%, oklch(0.62 0.08 140 / 0.09), transparent 60%);
+}
+
+/* 消息气泡样式 */
+.message-bubble-user {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border-radius: var(--radius-xl) var(--radius-xl) var(--radius-md) var(--radius-xl);
+}
+
+.message-bubble-ai {
+  background: var(--card);
+  color: var(--card-foreground);
+  border-radius: var(--radius-xl) var(--radius-xl) var(--radius-xl) var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground, oklch(0.6 0.02 280));
+  border-radius: 3px;
+  opacity: 0.3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground, oklch(0.8 0.02 280));
+}
+
+body {
+  min-height: 100vh;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* 标签式导航 - 选中态下划线 */
+.tab-nav-item {
+  position: relative;
+  padding: 0.5rem 1rem;
+  color: var(--foreground);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.tab-nav-item:hover {
+  color: var(--primary);
+}
+
+.tab-nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* 输入框样式 - 无边框 */
+.input-soft {
+  border: none;
+  background: var(--muted);
+  border-radius: var(--radius-lg);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: var(--foreground);
+  transition: background 0.2s;
+}
+
+.input-soft:focus {
+  outline: none;
+  background: var(--muted-foreground);
+  background: oklch(from var(--muted-foreground) l c h / 0.1);
+}
+
+.input-soft::placeholder {
+  color: var(--muted-foreground);
+}
+
+/* 按钮样式 */
+.btn-soft {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  border-radius: var(--radius-xl);
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-soft:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-soft:active {
+  transform: translateY(0);
+}
+
+/* 卡片渐变效果 - 参考参考图的粉色渐变 */
+.card-soft-gradient {
+  background: linear-gradient(135deg, var(--card), var(--card));
+  position: relative;
+  overflow: hidden;
+}
+
+.card-soft-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    oklch(from var(--primary) l c h / 0.03),
+    oklch(from var(--accent) l c h / 0.05)
+  );
+  pointer-events: none;
+}
