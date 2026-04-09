@@ -124,51 +124,43 @@ function DashboardContent() {
           </CardContent>
         </Card>
 
-        <div className="mt-8 sm:mt-12">
-          <Card className="card-soft-gradient mx-auto max-w-4xl border-0 p-4 sm:p-6 lg:p-8 shadow-lg">
-            <CardHeader className="px-0 pb-3 sm:pb-4">
-              <div className="mb-3 sm:mb-4 flex gap-8 border-b pb-3 sm:pb-4">
-                <div className="tab-nav-item active font-medium text-sm sm:text-base">止戈录摘要</div>
+        <div className="mt-8 sm:mt-12 mx-auto max-w-4xl rounded-2xl sm:rounded-3xl bg-muted/20 py-12 sm:py-16">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <h2 className="mb-2 text-center text-2xl sm:text-3xl font-semibold tracking-tight text-foreground">止戈录摘要</h2>
+            <p className="mb-8 sm:mb-12 text-center text-sm sm:text-base text-muted-foreground">记录每一次成长，避免重蹈覆辙</p>
+            <dl className="grid grid-cols-1 gap-x-8 gap-y-10 text-center sm:grid-cols-3">
+              <div className="mx-auto flex max-w-xs flex-col gap-y-3">
+                <dt className="text-sm sm:text-base text-muted-foreground">本月冲突次数</dt>
+                <dd className="order-first text-3xl font-semibold tracking-tight text-primary sm:text-5xl">5 次</dd>
+                <dd className="text-xs sm:text-sm text-muted-foreground">较上月减少 3 次</dd>
               </div>
-              <CardTitle className="text-xl sm:text-2xl">记录每一次成长</CardTitle>
-              <CardDescription>避免重蹈覆辙，让自己变得更好</CardDescription>
-            </CardHeader>
-            <CardContent className="px-0 pb-0">
-              <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-3">
-                <div className="rounded-xl sm:rounded-2xl bg-muted/30 p-4 sm:p-6">
-                  <div className="mb-2 text-xs sm:text-sm text-muted-foreground">本月冲突次数</div>
-                  <div className="text-3xl sm:text-4xl font-bold text-primary">5</div>
-                  <div className="mt-1 sm:mt-2 text-[10px] sm:text-xs text-muted-foreground">较上月减少 3 次</div>
-                </div>
-
-                <div className="rounded-xl sm:rounded-2xl bg-muted/30 p-4 sm:p-6">
-                  <div className="mb-2 text-xs sm:text-sm text-muted-foreground">高频诱因</div>
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                    <Badge variant="secondary" className="rounded-full text-[10px] sm:text-xs">家务分配</Badge>
-                    <Badge variant="secondary" className="rounded-full text-[10px] sm:text-xs">沟通方式</Badge>
-                    <Badge variant="secondary" className="rounded-full text-[10px] sm:text-xs">时间管理</Badge>
-                  </div>
-                </div>
-
-                <div className="rounded-xl sm:rounded-2xl bg-muted/30 p-4 sm:p-6">
-                  <div className="mb-2 text-xs sm:text-sm text-muted-foreground">有效对策</div>
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                    <Badge className="bg-primary rounded-full text-primary-foreground text-[10px] sm:text-xs">先倾听</Badge>
-                    <Badge className="bg-primary rounded-full text-primary-foreground text-[10px] sm:text-xs">承认错误</Badge>
-                    <Badge className="bg-primary rounded-full text-primary-foreground text-[10px] sm:text-xs">事后复盘</Badge>
-                  </div>
-                </div>
+              <div className="mx-auto flex max-w-xs flex-col gap-y-3">
+                <dt className="text-sm sm:text-base text-muted-foreground">高频诱因</dt>
+                <dd className="order-first text-3xl font-semibold tracking-tight text-foreground sm:text-5xl">3 个</dd>
+                <dd className="flex flex-wrap justify-center gap-1.5 sm:gap-2">
+                  <Badge variant="secondary" className="rounded-full">家务分配</Badge>
+                  <Badge variant="secondary" className="rounded-full">沟通方式</Badge>
+                  <Badge variant="secondary" className="rounded-full">时间管理</Badge>
+                </dd>
               </div>
-
-              <div className="mt-6 sm:mt-8">
-                <Link href="/archive">
-                  <Button variant="outline" className="w-full rounded-2xl">
-                    查看完整止戈录
-                  </Button>
-                </Link>
+              <div className="mx-auto flex max-w-xs flex-col gap-y-3">
+                <dt className="text-sm sm:text-base text-muted-foreground">有效对策</dt>
+                <dd className="order-first text-3xl font-semibold tracking-tight text-foreground sm:text-5xl">3 个</dd>
+                <dd className="flex flex-wrap justify-center gap-1.5 sm:gap-2">
+                  <Badge className="rounded-full bg-primary text-primary-foreground">先倾听</Badge>
+                  <Badge className="rounded-full bg-primary text-primary-foreground">承认错误</Badge>
+                  <Badge className="rounded-full bg-primary text-primary-foreground">事后复盘</Badge>
+                </dd>
               </div>
-            </CardContent>
-          </Card>
+            </dl>
+            <div className="mt-8 sm:mt-12">
+              <Link href="/archive">
+                <Button variant="outline" className="w-full rounded-2xl">
+                  查看完整止戈录
+                </Button>
+              </Link>
+            </div>
+          </div>
         </div>
       </main>
     </div>
